@@ -1,0 +1,10 @@
+Project name
+react-library
+Project ID 
+react-library-dfca8
+Project number 
+136357832561
+Default GCP resource location 
+nam5 (us-central)
+Web API Key
+AIzaSyBW2P8L90pwXv5RN0MAZLHnnuyCCp8cpeU

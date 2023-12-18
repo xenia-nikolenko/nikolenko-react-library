@@ -1,0 +1,16 @@
+/* BookData.css */
+
+.book-details {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.available-true {
+  font-weight: bold;
+  color: green;
+}
+
+.available-false {
+  font-weight: normal;
+  color: grey;
+}
