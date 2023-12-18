@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase.config";
-import '../../styles/signIn.css';
+import '../../styles/SignIn.css';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { db } from '../../firebase.config';
 
 
+/* eslint-disable react/prop-types */
 const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -17,7 +18,7 @@ const SignIn = () => {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log(userCredential);
+                console.log("userCredential:", userCredential);
                 navigate("/");
             }).catch((error) => {
                 console.log(error);
