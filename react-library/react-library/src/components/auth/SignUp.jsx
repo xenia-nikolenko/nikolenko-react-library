@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from '../../firebase.config'; 
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, setDoc } from "firebase/firestore";
 
 const SignUp = () => {
     const [email, setEmail] = useState("");
@@ -14,8 +14,11 @@ const SignUp = () => {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
+            console.log("===> USER:", user)
 
             if (user) {
+                console.log("USER ID on signup", user.uid)
+                console.log("typeof uid", typeof user.uid)
                 const userData = {
                     
                     email: email,
@@ -24,7 +27,8 @@ const SignUp = () => {
                     
                 };
 
-                const docRef = await addDoc(collection(db, 'users'), userData);
+                //const docRef = await addDoc(collection(db, 'users'), userData);
+                const docRef = await setDoc(doc(db, 'users', user.uid), userData);
 
                 console.log("User data added to Firestore with ID:", docRef.id);
                 setEmail('');

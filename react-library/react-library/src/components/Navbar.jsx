@@ -4,7 +4,8 @@ import AuthDetails from './auth/AuthDetails';
 import Profile from '../pages/Profile';
 
 
-function Navbar() {
+/* eslint-disable react/prop-types */
+function Navbar({ authUser, setAuthUser }) {
 
   return (
     <nav className="navbar">
@@ -13,7 +14,7 @@ function Navbar() {
         <ul className="navbar-links">
           <li><a href="/">Home</a></li>
           <li><a href="/profile">Profile</a></li>
-          <li><AuthDetails/></li>
+          <li><AuthDetails  authUser={authUser} setAuthUser={setAuthUser} /></li>
         </ul>
       </div>
     </nav>

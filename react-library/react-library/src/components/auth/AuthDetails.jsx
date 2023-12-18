@@ -3,13 +3,12 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../../firebase.config";
 import { NavLink } from "react-router-dom";
 
-const AuthDetails = () => {
-  const [authUser, setAuthUser] = useState(null);
-
-
+/* eslint-disable react/prop-types */
+const AuthDetails = ({ authUser, setAuthUser }) => {
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
+        console.log("got user, setting authUser")
         setAuthUser(user);
       } else {
         setAuthUser(null);
@@ -28,10 +27,9 @@ const AuthDetails = () => {
       })
       .catch((error) => console.log(error));
   };
- 
+
   return (
     <div>
-
       {authUser ? (
         <>
           {`Welcome, ${authUser.email} `}
