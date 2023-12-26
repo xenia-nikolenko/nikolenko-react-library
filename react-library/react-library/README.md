@@ -1,6 +1,6 @@
 The project is a React-based library management system utilizing Firebase services for real-time database management and user authentication. It includes components like "Home" for displaying books, "Profile" enabling users to manage owned books, "BookData" for detailed book views, and "AddBook" for adding new books with title, author, description, and cover image. Through a clean UI and React Router for navigation, it provides an intuitive interface for efficiently managing a digital library, leveraging Firebase for data handling and authentication.
 
-#Home Component (Home.js)
+##Home Component (Home.js)
 The Home component retrieves data from the Firestore database and displays a list of books. It uses useState and useEffect hooks to fetch book data from Firebase and render the book cards with information such as title, author, description, and an option to read more about each book. Clicking the "Read more" button navigates to detailed book information.
 
 #Profile Component (Profile.js)
